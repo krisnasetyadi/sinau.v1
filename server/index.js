@@ -10,4 +10,6 @@ app.use(cors())
 // routes
 app.use('/dashboard', require('./routes/dashboard'))
 
+app.use('/auth',require('./routes/jwtAuth'))
+
 app.listen(PORT,()=>console.log(`Server is Running on PORT ${PORT}`))
