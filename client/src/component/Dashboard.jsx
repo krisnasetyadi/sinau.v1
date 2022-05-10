@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { toast } from "react-toastify";
-
+import NavBar from './Navbar'
 export default function Dashboard ({setAuth}){
     const [name,setName]=useState("")
 
@@ -28,12 +28,13 @@ export default function Dashboard ({setAuth}){
         getName()
     },[])
     return(
-        <div  style={{height:'300px', margin:'auto',backgroundColor:'red'}}>
-            <div>
+        <div  style={{height:'300px', margin:'auto',backgroundColor:'lavender'}}>
+            <NavBar studentName={name} Logout={logout}/>
+            {/* <div>
             <h4>Welcome Back, {name}</h4>
             </div>
-        
-        <Button variant="primary" onClick={e=>logout(e)}>Logout</Button>
+         */}
+        {/* <Button variant="primary" onClick={e=>logout(e)}>Logout</Button> */}
         </div>
     )
 }
