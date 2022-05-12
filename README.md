@@ -1,3 +1,3 @@
 # sinau.v1 
 
-<p>sinau lanjutan</p>
+<p>sinau e-learning</p>
