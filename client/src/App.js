@@ -36,13 +36,13 @@ function App() {
      <Routes>
        <Route exact path='/login' 
        element={!isAuthenticated ?  (<Login setAuth={setAuth}/>) 
-       : (<Navigate to='/dashboard'/>)}/>
+       : (<Navigate to='/'/>)}/>
 
        <Route exact path='/register' 
        element={!isAuthenticated ? (<Register setAuth={setAuth}/>) 
        : (<Navigate to='/login'/>)}/>
        
-       <Route exact path='/dashboard' 
+       <Route exact path='/' 
        element={ isAuthenticated ? (<Dashboard setAuth={setAuth}/>) 
        :  (<Navigate to='/login'/>)} />
 

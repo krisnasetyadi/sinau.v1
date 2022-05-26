@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { toast } from "react-toastify";
 import NavBar from './Navbar'
+import Sidebar from "./Sidebar";
 export default function Dashboard ({setAuth}){
     const [name,setName]=useState("")
-
+    const [handleShowSidebar,setHandleShowSidebar]=useState(false)
+    console.log('handle dashboaard',handleShowSidebar)
     async function getName(){
         try{
             const response = await fetch('http://localhost:5000/dashboard/',{
@@ -28,13 +30,13 @@ export default function Dashboard ({setAuth}){
         getName()
     },[])
     return(
+        <div className="main-dashboard bg-success" style={{height:'500px'}}>
         <div  style={{height:'300px', margin:'auto',backgroundColor:'lavender'}}>
-            <NavBar studentName={name} Logout={logout}/>
-            {/* <div>
-            <h4>Welcome Back, {name}</h4>
-            </div>
-         */}
-        {/* <Button variant="primary" onClick={e=>logout(e)}>Logout</Button> */}
+            <NavBar studentName={name} Logout={logout} setHandler={setHandleShowSidebar}/>
+        </div>
+        <div className="sidebar bg-warning">
+        <Sidebar handleShowSidebar={handleShowSidebar} setHandleShowSidebar={()=>setHandleShowSidebar()} />
+        </div>
         </div>
     )
 }

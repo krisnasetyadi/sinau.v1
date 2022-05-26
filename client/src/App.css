@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.header{
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+.main-dashboard {
+  /* display: block;
+  z-index: 5; */
+  position: relative;
+}
+.side-bar .side-canvas{
+ position: absolute ;
+}
